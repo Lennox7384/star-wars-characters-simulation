@@ -73,7 +73,7 @@ public class ForceTest {
      * Test of setStrength method.
      * 0 is out of the limits and should be properly handled
      */
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void test_SetStrength_method_Strength_of_all_fighters_must_not_be_below_0 () {
         
         // set up test
@@ -100,7 +100,7 @@ public class ForceTest {
      * Test of setStrength method.
      * 110 is out of the limits and should be properly handled
      */
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void test_SetStrength_method_Strength_of_all_fighters_must_not_be_above_100 () {
         
         // set up test
@@ -215,8 +215,8 @@ public class ForceTest {
      * Case 3: Absurdly large strength should fail to generate relevant result.
      * The error has been handled with care.
      */
-    
-    @Test
+
+    @Test(expected = ArithmeticException.class)
     public void testInfluence_absurdly_large_strengths_anythingAbove100_should_fail_to_produce_relevant_result() {
    
         ByteArrayOutputStream result02= new ByteArrayOutputStream();
@@ -332,8 +332,8 @@ public class ForceTest {
      * Case 3: Absurd force level, in this case way below zero.
      * Error is generated, the error is handled with care.
      */
-    
-      @Test
+
+    @Test(expected = ArithmeticException.class)
     public void testMoveObject_fighterForce_Is_absurdly_below_zero_error_should_appear_and_handled_nicely() {
         
        ByteArrayOutputStream result02= new ByteArrayOutputStream();
